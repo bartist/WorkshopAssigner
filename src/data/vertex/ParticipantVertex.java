@@ -18,4 +18,14 @@ public class ParticipantVertex extends Vertex {
     public String getNextPreference() {
         return participant.getNextPreference();
     }
+
+    @Override
+    public String pushChoice() {
+        String choice = super.pushChoice();
+        if(choice != null){
+            participant.choose(choice);
+        }
+        return "";
+    }
+
 }

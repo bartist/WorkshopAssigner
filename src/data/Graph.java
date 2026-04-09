@@ -68,4 +68,10 @@ public class Graph {
 	    int fixFlowResult = end.fixFlow(residu);
 		return this.isOptimalFlow(fixFlowResult + resultFlow);
     }
+
+    public void pushDivision() {
+        for(ParticipantVertex participant : participants){
+            participant.pushChoice();
+        }
+    }
 }

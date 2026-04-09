@@ -57,4 +57,12 @@ public class Edge {
             return direction.fixFlow(residu);
         }
     }
+
+    public String pushChoice() {
+        if(capacity == flow){
+            return to.pushChoice();
+        }
+
+        return "";
+    }
 }

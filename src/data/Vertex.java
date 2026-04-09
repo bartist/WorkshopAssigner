@@ -80,4 +80,15 @@ public class Vertex {
 	public boolean isEnd() {
 		return to.isEmpty();
 	}
+
+    public String pushChoice() {
+        String choice = "";
+        for(Edge e : to){
+            choice = e.pushChoice();
+            if(!choice.isEmpty()){
+                return choice;
+            }
+        }
+        return null;
+    }
 }

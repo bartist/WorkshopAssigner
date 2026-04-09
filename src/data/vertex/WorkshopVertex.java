@@ -13,4 +13,9 @@ public class WorkshopVertex extends Vertex {
     public boolean is(String workshop) {
         return this.workshop.equals(workshop);
     }
+
+    @Override
+    public String pushChoice(){
+        return workshop;
+    }
 }

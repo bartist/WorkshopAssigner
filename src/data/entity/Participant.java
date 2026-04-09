@@ -33,10 +33,16 @@ public class Participant {
         }
     }
 
-    public void reset(){
+    private void reset(){
         currentPreference = 0;
         preferenceIncrement();
     }
+
+    public void choose(String choice) {
+        assigned.add(choice);
+        reset();
+    }
+
 
     // todo: add preference ranking for sorting worst-matched preference to best
 }
