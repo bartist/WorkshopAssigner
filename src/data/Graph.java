@@ -12,7 +12,6 @@ public class Graph {
 	private ArrayList<Edge> edges;
 	private Vertex start;
 	private Vertex end;
-	private int currentSize;
 	private int workshopSize;
 	
 	public Graph(int workshopSize){
@@ -22,7 +21,6 @@ public class Graph {
         workshops = new ArrayList<>();
 		edges = new ArrayList<>();
 		this.workshopSize = workshopSize;
-		currentSize = 0;
 	}
 
     public void addWorkshop(String name){
@@ -30,8 +28,6 @@ public class Graph {
 
         workshops.add(workshop);
         edges.add(new Edge(workshop,end, workshopSize));
-
-        currentSize += workshopSize;
     }
 
 	public void addParticipant(Participant p){
@@ -54,13 +50,9 @@ public class Graph {
 	public int overflow(){
 		return start.overflow(Integer.MAX_VALUE);
 	}
-	
-	public String[] allToString(){
-		return null;
-	}
 
 	public boolean isOptimalFlow(int resultFlow) {
-		return false;
+		return resultFlow == participants.size();
 	}
 
     public boolean fixFlow(int resultFlow) {
