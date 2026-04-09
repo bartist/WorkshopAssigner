@@ -47,7 +47,12 @@ public class Main {
 
                     round.pushDivision();
                 }
+
+                for(Participant participant : participants){
+                    System.out.println(participant.createPrintable());
+                }
             }
+
         }
 	}
 	

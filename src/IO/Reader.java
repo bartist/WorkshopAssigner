@@ -40,8 +40,6 @@ public class Reader {
             return null;
         }
 
-        sc.nextLine();
-
         ArrayList<String[]> result = new ArrayList<>();
         while(sc.hasNextLine()){
             String input = sc.nextLine();

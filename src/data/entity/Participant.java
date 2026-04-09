@@ -23,7 +23,7 @@ public class Participant {
         String preference = preferences.get(currentPreference);
 
         currentPreference++;
-        preferenceIncrement();
+        if(currentPreference < preferences.size()) preferenceIncrement();
 
         return preference;
     }
@@ -41,6 +41,10 @@ public class Participant {
     public void choose(String choice) {
         assigned.add(choice);
         reset();
+    }
+
+    public String createPrintable() {
+        return name + ";" + assigned;
     }
 
 

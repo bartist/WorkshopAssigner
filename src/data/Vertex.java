@@ -29,8 +29,6 @@ public class Vertex {
 		    return stream;
 		int flow = 0;
 		
-		Collections.shuffle(to);
-		
 		for(Edge e : to){
 			flow += e.overflow(stream - flow);
 			if(flow == stream) break;
