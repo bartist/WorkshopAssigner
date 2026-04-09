@@ -4,7 +4,7 @@ import data.Vertex;
 import data.entity.Participant;
 
 public class ParticipantVertex extends Vertex {
-    private Participant participant;
+    private final Participant participant;
 
     public ParticipantVertex(Participant participant) {
         this.participant = participant;

@@ -6,6 +6,7 @@ import data.Graph;
 import data.entity.Participant;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
 
@@ -46,8 +47,10 @@ public class Main {
                     }
 
                     round.pushDivision();
+                    participants.sort(Participant::comparePreferenceIndex);
                 }
 
+                participants.sort(Participant::compareName);
                 for(Participant participant : participants){
                     System.out.println(participant.createPrintable());
                 }

@@ -7,6 +7,7 @@ public class Participant {
     private final ArrayList<String> preferences;
     private int currentPreference;
     private final ArrayList<String> assigned;
+    private int preferenceIndex = 0;
 
     public Participant(String name, ArrayList<String> preferences){
         this.name = name;
@@ -40,13 +41,21 @@ public class Participant {
 
     public void choose(String choice) {
         assigned.add(choice);
+        preferenceIndex += preferences.indexOf(choice);
         reset();
     }
 
     public String createPrintable() {
-        return name + ";" + assigned;
+        StringBuilder assignedAsString = new StringBuilder();
+        for(String workshop : assigned) assignedAsString.append(";").append(workshop);
+        return name + ";" + assignedAsString.substring(1) + ";" + preferenceIndex;
     }
 
+    public int comparePreferenceIndex(Participant participant) {
+        return Integer.compare(participant.preferenceIndex, this.preferenceIndex);
+    }
 
-    // todo: add preference ranking for sorting worst-matched preference to best
+    public int compareName(Participant participant) {
+        return CharSequence.compare(this.name, participant.name);
+    }
 }
