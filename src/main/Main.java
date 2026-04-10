@@ -52,8 +52,10 @@ public class Main {
                 }
 
                 participants.sort(Participant::compareName);
-                for(Participant participant : participants){
-                    System.out.println(participant.createPrintable());
+                String[] result = new String[participants.size()];
+                for(int i = 0; i < participants.size(); i++){
+                    result[i] = participants.get(i).createPrintable();
+                    System.out.println(result[i]);
                 }
 
                 int minvalue = 0;
@@ -65,6 +67,8 @@ public class Main {
 
                 System.out.println("\nPreference deviation: " + (allPreferenceValues-correction));
                 System.out.println("Average deviation: " + Math.round((double) (allPreferenceValues - correction) * 100 / participants.size()) / 100.0);
+
+                Writer.writeTo(resultSrc,result,allDayWorkshops.size());
             }
 
         }

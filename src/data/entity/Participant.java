@@ -48,7 +48,7 @@ public class Participant {
     public String createPrintable() {
         StringBuilder assignedAsString = new StringBuilder();
         for(String workshop : assigned) assignedAsString.append(";").append(workshop);
-        return name + ";" + assignedAsString.substring(1) + ";" + preferenceIndex;
+        return name + ";" + assignedAsString.substring(1);
     }
 
     public int comparePreferenceIndex(Participant participant) {
