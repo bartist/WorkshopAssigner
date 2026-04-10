@@ -58,4 +58,8 @@ public class Participant {
     public int compareName(Participant participant) {
         return CharSequence.compare(this.name, participant.name);
     }
+
+    public int addPreferenceIndex(int allPreferenceValues) {
+        return allPreferenceValues + preferenceIndex;
+    }
 }
